@@ -21,4 +21,4 @@ func reset():
 
 
 func random_direction():
-	return Vector2(randf_range(-1, 1), randf_range(-0.5, 0.5)).normalized()
+	return Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * randf_range(0.5, 1)
