@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm5jkypejb0nd"]
+
+[ext_resource type="PackedScene" uid="uid://bif7f0p5qw1lg" path="res://left_paddle.tscn" id="1_tymfg"]
+[ext_resource type="PackedScene" uid="uid://ypmtts4ahbsp" path="res://ball.tscn" id="2_beq1f"]
+[ext_resource type="PackedScene" uid="uid://7el0oblu0go3" path="res://right_paddle.tscn" id="2_k6kmj"]
+[ext_resource type="PackedScene" uid="uid://ciy4f5u276fnj" path="res://wall.tscn" id="3_hqvwu"]
+[ext_resource type="PackedScene" uid="uid://bvjcb1qqc02a6" path="res://goal.tscn" id="5_cx2ql"]
+
+[node name="Arena" type="Node2D"]
+
+[node name="LeftPaddle" parent="." instance=ExtResource("1_tymfg")]
+position = Vector2(64, 400)
+
+[node name="RightPaddle" parent="." instance=ExtResource("2_k6kmj")]
+position = Vector2(1208, 400)
+
+[node name="Ball" parent="." instance=ExtResource("2_beq1f")]
+position = Vector2(640, 400)
+
+[node name="Ceiling" parent="." instance=ExtResource("3_hqvwu")]
+
+[node name="Floor" parent="." instance=ExtResource("3_hqvwu")]
+position = Vector2(0, 816)
+
+[node name="LeftGoal" parent="." instance=ExtResource("5_cx2ql")]
+
+[node name="RightGoal" parent="." instance=ExtResource("5_cx2ql")]
+position = Vector2(1296, 0)

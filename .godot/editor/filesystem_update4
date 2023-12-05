@@ -1,0 +1,13 @@
+res://ball.gd
+res://wall.gd
+res://wall.tscn
+res://arena.tscn
+res://paddle.gd
+res://paddle.tscn
+res://left_paddle.gd
+res://left_paddle.tscn
+res://right_paddle.gd
+res://right_paddle.tscn
+res://ball.tscn
+res://goal.tscn
+res://goal.gd
