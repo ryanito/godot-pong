@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxpt3yy5qfoyn"]
+[gd_scene load_steps=4 format=3 uid="uid://cxpt3yy5qfoyn"]
 
 [ext_resource type="Script" path="res://paddle.gd" id="1_hey35"]
+[ext_resource type="AudioStream" uid="uid://c0fixlftgu860" path="res://hit.wav" id="2_vb7nd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t4cja"]
 size = Vector2(16, 104)
@@ -17,5 +18,8 @@ offset_left = -8.0
 offset_top = -52.0
 offset_right = 8.0
 offset_bottom = 52.0
+
+[node name="HitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vb7nd")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

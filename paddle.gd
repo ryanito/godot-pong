@@ -5,6 +5,7 @@ extends Area2D
 const MOVEMENT_SPEED = 400
 
 @onready var collision_shape = $CollisionShape2D
+@onready var hit_sound = $HitSound
 
 
 func up(delta) -> void:
@@ -22,3 +23,5 @@ func _on_area_entered(area: Area2D):
 		area.direction = Vector2(-area.direction.x, area.direction.y).rotated(
 			deg_to_rad(45) * (area.position.y - position.y) / (collision_shape.shape.size.y / 2)
 		)
+
+		hit_sound.play()

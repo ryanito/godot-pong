@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvjcb1qqc02a6"]
+[gd_scene load_steps=4 format=3 uid="uid://bvjcb1qqc02a6"]
 
 [ext_resource type="Script" path="res://goal.gd" id="1_g548p"]
+[ext_resource type="AudioStream" uid="uid://fkm8x4iv5ylv" path="res://score.wav" id="2_02whu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d007s"]
 size = Vector2(16, 801)
@@ -11,5 +12,9 @@ script = ExtResource("1_g548p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-8, 399.5)
 shape = SubResource("RectangleShape2D_d007s")
+
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_02whu")
+volume_db = -5.045
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
