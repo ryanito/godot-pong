@@ -24,4 +24,5 @@ func reset():
 
 
 func random_direction():
-	return Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * randf_range(0.5, 1)
+	var angle = randf_range(-PI / 4, PI / 4)
+	return Vector2(cos(angle), sin(angle))
