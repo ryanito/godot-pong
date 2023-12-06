@@ -4,13 +4,17 @@ extends Area2D
 
 const MOVEMENT_SPEED = 400
 
+@onready var collision_shape = $CollisionShape2D
+
 
 func up(delta) -> void:
-	position.y -= MOVEMENT_SPEED * delta
+	if position.y > collision_shape.shape.size.y / 2:
+		position.y -= MOVEMENT_SPEED * delta
 
 
 func down(delta) -> void:
-	position.y += MOVEMENT_SPEED * delta
+	if position.y < 800 - (collision_shape.shape.size.y / 2):
+		position.y += MOVEMENT_SPEED * delta
 
 
 func _on_area_entered(area: Area2D):
