@@ -7,11 +7,9 @@ extends Node2D
 
 func _ready():
 	if Global.number_of_players == 1:
-		right_paddle.hide()
-		ai_paddle.show()
+		right_paddle.queue_free()
 	elif Global.number_of_players == 2:
-		right_paddle.show()
-		ai_paddle.hide()
+		ai_paddle.queue_free()
 
 
 func _on_main_menu_button_pressed():
