@@ -6,6 +6,6 @@ func _on_area_entered(area: Area2D):
 		area.reset()
 
 		if name == "LeftGoal":
-			get_node("/root/Arena/LeftScore").increment()
-		elif name == "RightGoal":
 			get_node("/root/Arena/RightScore").increment()
+		elif name == "RightGoal":
+			get_node("/root/Arena/LeftScore").increment()
