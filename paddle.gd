@@ -20,5 +20,5 @@ func down(delta) -> void:
 func _on_area_entered(area: Area2D):
 	if area.name == "Ball":
 		area.direction = Vector2(-area.direction.x, area.direction.y).rotated(
-			deg_to_rad(randf_range(-15, 15))
+			deg_to_rad(45) * (area.position.y - position.y) / (collision_shape.shape.size.y / 2)
 		)

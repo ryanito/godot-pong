@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplf05oqo0d1i"]
+
+[ext_resource type="Theme" uid="uid://c0swphjdj822l" path="res://theme.tres" id="1_s2wa6"]
+[ext_resource type="Script" path="res://main_menu.gd" id="2_02k45"]
+
+[node name="MainMenu" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_s2wa6")
+script = ExtResource("2_02k45")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Pong"
+
+[node name="OnePlayerButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1 Player"
+
+[node name="TwoPlayerButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "2 Player"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/OnePlayerButton" to="." method="_on_one_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/TwoPlayerButton" to="." method="_on_two_player_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

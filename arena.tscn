@@ -1,20 +1,30 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm5jkypejb0nd"]
+[gd_scene load_steps=11 format=3 uid="uid://cm5jkypejb0nd"]
 
-[ext_resource type="PackedScene" uid="uid://bif7f0p5qw1lg" path="res://left_paddle.tscn" id="1_tymfg"]
+[ext_resource type="Script" path="res://arena.gd" id="1_kjmbw"]
+[ext_resource type="PackedScene" uid="uid://cxpt3yy5qfoyn" path="res://paddle.tscn" id="1_tymfg"]
 [ext_resource type="PackedScene" uid="uid://ypmtts4ahbsp" path="res://ball.tscn" id="2_beq1f"]
-[ext_resource type="PackedScene" uid="uid://7el0oblu0go3" path="res://right_paddle.tscn" id="2_k6kmj"]
 [ext_resource type="PackedScene" uid="uid://ciy4f5u276fnj" path="res://wall.tscn" id="3_hqvwu"]
+[ext_resource type="Script" path="res://left_paddle.gd" id="3_pe4na"]
+[ext_resource type="Script" path="res://ai_paddle.gd" id="4_3ccma"]
+[ext_resource type="Script" path="res://right_paddle.gd" id="4_ph6bo"]
 [ext_resource type="PackedScene" uid="uid://bvjcb1qqc02a6" path="res://goal.tscn" id="5_cx2ql"]
 [ext_resource type="Theme" uid="uid://c0swphjdj822l" path="res://theme.tres" id="6_7n6fk"]
 [ext_resource type="Script" path="res://score.gd" id="7_vwyqv"]
 
 [node name="Arena" type="Node2D"]
+script = ExtResource("1_kjmbw")
 
 [node name="LeftPaddle" parent="." instance=ExtResource("1_tymfg")]
 position = Vector2(64, 400)
+script = ExtResource("3_pe4na")
 
-[node name="RightPaddle" parent="." instance=ExtResource("2_k6kmj")]
+[node name="RightPaddle" parent="." instance=ExtResource("1_tymfg")]
 position = Vector2(1208, 400)
+script = ExtResource("4_ph6bo")
+
+[node name="AIPaddle" parent="." instance=ExtResource("1_tymfg")]
+position = Vector2(1208, 400)
+script = ExtResource("4_3ccma")
 
 [node name="Ball" parent="." instance=ExtResource("2_beq1f")]
 position = Vector2(640, 400)
@@ -48,3 +58,5 @@ theme = ExtResource("6_7n6fk")
 text = "0"
 horizontal_alignment = 1
 script = ExtResource("7_vwyqv")
+
+[connection signal="moved" from="Ball" to="AIPaddle" method="_on_ball_moved"]

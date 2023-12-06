@@ -1,7 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://bif7f0p5qw1lg"]
-
-[ext_resource type="Script" path="res://left_paddle.gd" id="1_m0h80"]
-[ext_resource type="PackedScene" uid="uid://cxpt3yy5qfoyn" path="res://paddle.tscn" id="1_rg8am"]
-
-[node name="LeftPaddle" instance=ExtResource("1_rg8am")]
-script = ExtResource("1_m0h80")

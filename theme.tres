@@ -3,5 +3,7 @@
 [ext_resource type="FontFile" uid="uid://b37j781p2kdqa" path="res://kenney-mini-square.ttf" id="1_sy05f"]
 
 [resource]
+Button/font_sizes/font_size = 26
+Button/fonts/font = ExtResource("1_sy05f")
 Label/font_sizes/font_size = 128
 Label/fonts/font = ExtResource("1_sy05f")

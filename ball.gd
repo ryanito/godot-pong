@@ -1,5 +1,7 @@
 extends Area2D
 
+signal moved(position: Vector2)
+
 const SPEED = 500
 
 var direction
@@ -13,6 +15,7 @@ func _ready():
 
 func _process(delta):
 	translate(direction * SPEED * delta)
+	moved.emit(position)
 
 
 func reset():
